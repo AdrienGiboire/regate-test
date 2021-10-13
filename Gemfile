@@ -9,8 +9,10 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
+
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'sidekiq'
+gem 'swagger-docs'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
