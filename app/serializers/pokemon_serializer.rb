@@ -13,7 +13,7 @@ class PokemonSerializer < ActiveModel::Serializer
   has_many :types do
     object.types.map do |type|
       TypeSerializer.new(type).serializable_hash.merge(
-        slot: PokemonType.where(type_id: type.id, pokemon_id: object.id).first.slot
+        slot: object.pokemon_types.where(type_id: type.id).first.slot
       )
     end
   end

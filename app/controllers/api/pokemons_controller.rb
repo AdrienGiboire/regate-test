@@ -1,6 +1,6 @@
 class Api::PokemonsController < ApplicationController
   def index
-    render json: Pokemon.all, include: ['types']
+    render json: Pokemon.preload(:pokemon_types, :types).all, include: ['types']
   end
 
   def show
