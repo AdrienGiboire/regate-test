@@ -37,6 +37,8 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 
+  gem 'brakeman'
+  gem 'bundler-audit'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rexml' # necessary if using ruby 3+
