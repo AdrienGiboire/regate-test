@@ -29,3 +29,16 @@ Maintenant, vous pouvez accéder au dashboard de Sidekiq :
 http://localhost:3000/sidekiq
 
 Et consommer l'API : http://localhost:3000/api/pokemons
+
+## Mise à jour des données
+
+Pour mettre à jour la liste des Pokemons (et de leurs types), il faut lancer la
+commande suivante :
+
+```
+bin/rake pokemons:update
+```
+
+Cette tâche va aller chercher tous les pokemons disponibles sur PokeAPI et
+mettre en file d'attente un job par pokemon. Pour voir l'avancée de la mise à
+jour, vous pouvez donc consulter le dashboard de Sidekiq.
