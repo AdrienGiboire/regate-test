@@ -1,24 +1,31 @@
-# README
+## Les prérequis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ce qu'il faut installer sur votre machine pour que ce projet tourne :
 
-Things you may want to cover:
+- sqlite
+- redis
 
-* Ruby version
+## Installer le projet
 
-* System dependencies
+Il suffit de lancer la commande suivante pour que les dépendances du projet
+soient installées :
 
-* Configuration
+```
+bundle install
+```
 
-* Database creation
+## Lancer le projet
 
-* Database initialization
+Ce projet utilise Sidekiq, qui dépend de Redis. Donc avant de pouvoir faire
+tourner l'ensemble du projet, il faut lancer ces deux services :
 
-* How to run the test suite
+```
+$ redis-server [--daemonize yes]
+$ bundle exec sidekiq
+$ bin/rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Maintenant, vous pouvez accéder au dashboard de Sidekiq :
+http://localhost:3000/sidekiq
 
-* Deployment instructions
-
-* ...
+Et consommer l'API : http://localhost:3000/api/pokemons
